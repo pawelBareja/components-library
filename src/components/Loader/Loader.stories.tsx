@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Loader, { LoaderProps } from "./Loader";
 
 export default {
@@ -12,4 +12,14 @@ export default {
   },
 } as ComponentMeta<typeof Loader>;
 
-export const Default = ({ ...args }) => <Loader {...(args as LoaderProps)} />;
+const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
+
+export const LoaderEmpty = Template.bind({});
+LoaderEmpty.args = {};
+
+export const LoaderWithText = Template.bind({});
+LoaderWithText.args = {
+  text: "please wait",
+};
+
+// export const Default = ({ ...args }) => <Loader {...(args as LoaderProps)} />;

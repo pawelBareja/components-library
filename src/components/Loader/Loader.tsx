@@ -15,7 +15,7 @@ const Loader: FC<LoaderProps> = (props) => {
   return (
     <>
       {isLoading ? (
-        <>
+        <Fade in unmountOnExit>
           <Grid
             container
             direction="column"
@@ -33,7 +33,7 @@ const Loader: FC<LoaderProps> = (props) => {
               </Grid>
             )}
           </Grid>
-        </>
+        </Fade>
       ) : (
         <>{children}</>
       )}
